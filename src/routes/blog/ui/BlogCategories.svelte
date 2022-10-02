@@ -1,12 +1,10 @@
 <script>
-  import { checkedCategories } from '$lib/stores/blog.js'
-  import { posts_store } from '$lib/stores/blog.js'
+  import { checkedCategories_store } from '$lib/stores/blog.js'
+  import { allCategories_store } from '$lib/stores/blog.js'
 
   export let categories;
 
   let filteredCategories = []
-  let previousPosts = []
-  let filteredPosts = []
 
   // Store checked values into filteredCategories array.
   function storeCategories(event){

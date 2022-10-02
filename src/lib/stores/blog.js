@@ -1,10 +1,16 @@
 import { writable, derived } from 'svelte/store';
 
 
-export const checkedCategories = writable([]);
-export const posts_store = writable([]);
-
-export const categoryList = writable([
+// Ideally we would load this data from some DB and call onMount()
+// https://www.eternaldev.com/blog/introduction-to-svelte-derived-store/
+export const allPosts_store = writable([
+    {title:"Nginx Config", summary:"A simple container to divide your page into sections, like the one you're currently reading.", tags:"linux nginx server"},
+    {title:"Svelte Blog Post", summary:"A simple container to divide your page into sections, like the one you're currently reading.", tags:"Windows VSCode"},
+    {title:"Svelte Data Bindings", summary:"A simple container to divide your page into sections, like the one you're currently reading.", tags:"Windows VSCode"},
+    {title:"Ruby Code", summary:"A simple container to divide your page into sections, like the one you're currently reading.", tags:"Windows VSCode"},
+    {title:"Sample Title something", summary:"A simple container to divide your page into sections, like the one you're currently reading.", tags:"Windows VSCode"}
+])
+export const allCategories_store = writable([
     {name:"Svelte", checked: false},
     {name:"Nginx", checked: false},
     {name:"NextJS", checked: false},
@@ -14,3 +20,12 @@ export const categoryList = writable([
     {name:"Thoughts", checked: false},
     {name:"Javascript", checked: false}
   ]);
+
+export const filteredText_store = writable("")
+export const checkedCategories_store = writable([]);
+
+export const filteredPosts_store = derived([allPosts_store, filteredText_store], ([$allPosts_store, $filteredText_store]) => {
+  
+    return $allPosts_store.filter((item) => item.title.includes($filteredText_store));
+})
+

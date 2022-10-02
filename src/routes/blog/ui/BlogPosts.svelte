@@ -5,6 +5,7 @@
 <section class="box">
   <h1 class="title">{post.title}</h1>
   <h2 class="subtitle">
+    <!-- {post.body} USED for data fetch onMount example -->
     {post.summary}
   </h2>
 </section>

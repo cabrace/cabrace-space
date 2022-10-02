@@ -1,6 +1,7 @@
 <script>
   /* import Panel from '$lib/components/Panel.svelte' */
   import BlogPosts from './BlogPosts.svelte'
+  import { onMount } from 'svelte';
   // import BlogCategories from './BlogCategories.svelte'
 
   // import { checkedCategories_store } from '$lib/stores/blog.js'
@@ -8,20 +9,36 @@
 
   export let categories;
 
+
+  // Very cool way to load data check {await block also}
+  /* let postPromise; */
+
+  /* onMount(() => { */
+      /* postPromise = fetch('https://jsonplaceholder.typicode.com/posts').then((data) => data.json()).then((post) => { */
+          /* $allPosts_store = post; */
+        /* }); */
+    /* }) */
   
 
 </script>
+
+
+<!-- {#await postPromise} -->
+    <!-- <h2>Loading....</h2> -->
+<!-- {:then post} -->
 
 <div class="columns">
   <div class="column">
     <div class="field">
       <div class="control is-medium">
         <input  class="input is-medium" bind:value={$filteredText_store} type="text" placeholder="Search posts ....">
-  {#each $filteredPosts_store as post}
-    {post.title}
- {/each}
+         <!-- {#each $filteredPosts_store as post}
+            {post.title}
+         {/each}
+         -->
       </div>
     </div>
+  <h1 class="is-size-1">Posts</h1>
     {#each $filteredPosts_store as post}
       <BlogPosts {post} />
     {/each}
@@ -31,4 +48,4 @@
   <!-- { $checkedCategories_store } -->
   </div>
 </div>
-
+<!-- {/await} -->

@@ -1,27 +1,49 @@
 <script>
+  import { checkedCategories } from '$lib/stores/blog.js'
+  import { posts_store } from '$lib/stores/blog.js'
+
   export let categories;
 
-  let checkedCategories = []
+  let filteredCategories = []
+  let previousPosts = []
+  let filteredPosts = []
 
-  // Store checked values into checkedCategories array.
-  function handleCategories(event){
+  // Store checked values into filteredCategories array.
+  function storeCategories(event){
       let item = event.target.value
       let checked = event.target.checked // if checked is true
-      let exist = checkedCategories.includes(item)
+      let exist = filteredCategories.includes(item)
 
-      //if item is checked and not in the list
-      if (checked && !exist) {
-          // add item
-          checkedCategories.push(item)
-          //otherwise, if unchecked and in the list then , remove
-        }else if (!checked && exist){
+        //if item is checked and not in the list
+        if (checked && !exist) {
+            // add item
+            filteredCategories.push(item)
+            //otherwise, if unchecked and in the list then , remove
 
-            /* console.log("removing", item) */
-            let index = checkedCategories.indexOf(item)
-            checkedCategories.splice(index, 1)
+            //Apply Posts Filter
+            filterPosts(item)
           }
-      console.log(checkedCategories)
+        else if (!checked && exist){
+              /* console.log("removing", item) */
+              let index = filteredCategories.indexOf(item)
+              filteredCategories.splice(index, 1)
+              
+              
+        }
+      console.log(filteredCategories)
+      /* checkedCategories.set(filteredCategories) */
     }
+
+  function filterPosts(item){
+    
+      filteredPosts = $posts_store.filter(
+          post => (  
+          post.title.toLowerCase().includes(item.toLowerCase()) || 
+          post.tags.toString().includes(item)
+          )
+        );
+      posts_store.set(filteredPosts)
+  }
 
 </script>
 
@@ -31,7 +53,7 @@
   </p>
   {#each categories as {name, checked}}
     <label class="panel-block">
-      <input type="checkbox" value="{name}" bind:checked on:change={handleCategories}>
+      <input type="checkbox" bind:value="{name}" bind:checked on:change={storeCategories}>
       {name}
     </label>
   {/each}

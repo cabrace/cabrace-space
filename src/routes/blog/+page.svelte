@@ -1,6 +1,7 @@
 <script> 
   import Blog from "./ui/Blog.svelte"
 
+  //DATA 
   let posts = [ 
     {title:"Nginx Config", summary:"A simple container to divide your page into sections, like the one you're currently reading.", tags:"linux nginx server"},
     {title:"Svelte Blog Post", summary:"A simple container to divide your page into sections, like the one you're currently reading.", tags:"Windows VSCode"},

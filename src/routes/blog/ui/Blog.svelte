@@ -2,11 +2,17 @@
   /* import Panel from '$lib/components/Panel.svelte' */
   import BlogPosts from './BlogPosts.svelte'
   import BlogCategories from './BlogCategories.svelte'
+  import { checkedCategories } from '$lib/stores/blog.js'
+  import { posts_store } from '$lib/stores/blog.js'
 
   export let posts;
   export let categories;
 
-  //Debounce functionality
+   // Example importing, and setting store value
+  //  checkedCategories.set(["fgwqfwqfe"])
+  //  console.log("$", $checkedCategories)
+
+  // Debounce functionality
   let val='';
   let timer;
 
@@ -20,6 +26,7 @@
 
   let searchTerm = "";
   let filteredPosts = []
+  
 
   $: {
     if (searchTerm){
@@ -29,11 +36,16 @@
           post.tags.toString().includes(searchTerm)
           )
         );
+      checkedCategories.set(filteredPosts)
     }
     else {
         filteredPosts = [...posts];
     }
 
+    // SAVE resulting filteredPosts
+    posts_store.set(filteredPosts)
+      // console.log("$", $checkedCategories)
+      // console.log($posts_store)
   }
 </script>
 
@@ -44,12 +56,13 @@
         <input  class="input is-medium" bind:value={searchTerm} type="text" placeholder="Search posts ....">
       </div>
     </div>
-    {#each filteredPosts as post}
+    {#each $posts_store as post}
       <BlogPosts {post} />
     {/each}
   </div>
   <div class="column is-one-third">
     <BlogCategories {categories} />
+  { $checkedCategories }
   </div>
 </div>
 

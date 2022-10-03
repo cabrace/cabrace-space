@@ -2,12 +2,13 @@
   /* import Panel from '$lib/components/Panel.svelte' */
   import BlogPosts from './BlogPosts.svelte'
   import { onMount } from 'svelte';
-  // import BlogCategories from './BlogCategories.svelte'
+  import BlogCategories from './BlogCategories.svelte'
 
   // import { checkedCategories_store } from '$lib/stores/blog.js'
   import { allPosts_store, filteredText_store, filteredPosts_store } from '$lib/stores/blog.js'
 
   export let categories;
+  export let post;
 
 
   // Very cool way to load data check {await block also}
@@ -44,7 +45,7 @@
     {/each}
   </div>
   <div class="column is-one-third">
-    <!-- <BlogCategories {categories} /> -->
+    <BlogCategories {categories} />
   <!-- { $checkedCategories_store } -->
   </div>
 </div>

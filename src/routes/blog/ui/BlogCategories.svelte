@@ -1,47 +1,58 @@
 <script>
-  import { checkedCategories_store } from '$lib/stores/blog.js'
-  import { allCategories_store } from '$lib/stores/blog.js'
+  import { allCategories_store, allPosts_store, checkedCategories_store} from '$lib/stores/blog.js'
 
   export let categories;
 
-  let filteredCategories = []
+  //working array
+  let checkedCategories = []
 
-  // Store checked values into filteredCategories array.
-  function storeCategories(event){
+  // Store checked values into checkedCategories array.
+  function setCategory(event){
       let item = event.target.value
       let checked = event.target.checked // if checked is true
-      let exist = filteredCategories.includes(item)
+      let exist = checkedCategories.includes(item)
 
+        // Determine which state category is in
         //if item is checked and not in the list
         if (checked && !exist) {
             // add item
-            filteredCategories.push(item)
+            checkedCategories.push(item)
             //otherwise, if unchecked and in the list then , remove
 
             //Apply Posts Filter
-            filterPosts(item)
+            /* filterCategoryPosts(item) */
           }
         else if (!checked && exist){
               /* console.log("removing", item) */
-              let index = filteredCategories.indexOf(item)
-              filteredCategories.splice(index, 1)
-              
-              
+              let index = checkedCategories.indexOf(item)
+              checkedCategories.splice(index, 1)
         }
-      console.log(filteredCategories)
-      /* checkedCategories.set(filteredCategories) */
+
+      //This store updates filteredPosts_store because its derived from its value
+      checkedCategories_store.set(checkedCategories)
+
+      console.log("$", $checkedCategories_store)
+      /* filterCategoryPosts(); */
+      getCheckedCategories()
     }
 
-  function filterPosts(item){
-    
-      filteredPosts = $posts_store.filter(
-          post => (  
-          post.title.toLowerCase().includes(item.toLowerCase()) || 
-          post.tags.toString().includes(item)
-          )
-        );
-      posts_store.set(filteredPosts)
-  }
+  // Get a difinitive list of checked values by name on every update
+  function getCheckedCategories(){
+      /* console.log("checked categories") */
+      let filterList = []
+      $allCategories_store.filter((category) => {
+          if (category.checked == true) {
+              filterList = [...filterList, category.name]
+          }
+          // One Liner?
+          /* category.checked ? (filterList = [...filterList, category.name]) : (filterList = [...filterList]) */
+        })
+      /* console.log(filterList) */
+      checkedCategories_store.set(filterList)
+      return filterList;
+    }
+
+  /* getCheckedCategories() */
 
 </script>
 
@@ -49,9 +60,9 @@
   <p class="panel-heading">
     Browse By Category
   </p>
-  {#each categories as {name, checked}}
+  {#each $allCategories_store as {name, checked}}
     <label class="panel-block">
-      <input type="checkbox" bind:value="{name}" bind:checked on:change={storeCategories}>
+      <input type="checkbox" bind:checked bind:value="{name}" on:change={getCheckedCategories}>
       {name}
     </label>
   {/each}

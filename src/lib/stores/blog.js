@@ -8,7 +8,8 @@ export const allPosts_store = writable([
     {title:"Svelte Blog Post", summary:"A simple container to divide your page into sections, like the one you're currently reading.", tags:"Windows VSCode"},
     {title:"Svelte Data Bindings", summary:"A simple container to divide your page into sections, like the one you're currently reading.", tags:"Windows VSCode"},
     {title:"Ruby Code", summary:"A simple container to divide your page into sections, like the one you're currently reading.", tags:"Windows VSCode"},
-    {title:"Sample Title something", summary:"A simple container to divide your page into sections, like the one you're currently reading.", tags:"Windows VSCode"}
+    {title:"Sample Title something", summary:"A simple container to divide your page into sections, like the one you're currently reading.", tags:"Windows VSCode"},
+    {title:"General Thoughts", summary:"A simple container to divide your page into sections, like the one you're currently reading.", tags:"Windows VSCode"}
 ])
 export const allCategories_store = writable([
     {name:"Svelte", checked: false},
@@ -24,24 +25,33 @@ export const allCategories_store = writable([
 //On update through bind: set derived postsListings 
 export const filteredText_store = writable("")
 
-export const checkedCategories_store = writable([]);
-// export const filteredCategories_store = writable([]);
-export const filteredCategoryPosts_store = writable([]);
+export const selectedCategories_store = writable([]);
 
-// export const combinedFilterList_store = derived(
-  // [allPosts_store, filteredText_store, checkedCategories_store],([$allPosts_store, $filteredText_store, $checkedCategories_store]) => {
-    // let filterList = $checkedCategories_store.concat($filteredText_store)
-    // console.log("Hello")
-  // }
-// )
+export const filteredCategoryPosts_store = writable([]);
 
 // Derived from allPosts, filteredText, checkedCategories
 export const filteredPosts_store = derived(
-            // All values passed in these arrays, trigget this function on update through assignment
-  [allPosts_store, filteredText_store, checkedCategories_store],([$allPosts_store, $filteredText_store, $checkedCategories_store]) => {
+  // All values passed in these arrays, trigger this function on update through assignment
+  [allPosts_store, filteredText_store],([$allPosts_store, $filteredText_store]) => {
     // let filterList = $checkedCategories_store.concat(`${$filteredText_store}`)
-  console.log("fPosts")
+    console.log('filteredPosts_store')
     return $allPosts_store.filter((post) => post.title.toLowerCase().includes($filteredText_store.toLowerCase()));
   }
 )
 
+export const filteredCategories_store = derived(
+  // All values passed in these arrays, trigget this function on update through assignment
+  [allPosts_store, selectedCategories_store],([$allPosts_store, $selectedCategories_store]) => {
+    // let filterList = $checkedCategories_store.concat(`${$filteredText_store}`)
+    console.log('filteredCat_store')
+    return $allPosts_store.filter((post) => post.title.toLowerCase().includes("Svelte".toLowerCase()));
+  }
+)
+
+// Depends on above
+// export const filteredCategories_store = derived(
+  // [allPosts_store,selectedCategories_store],[$allPosts_store,$selectedCategories_store]) => {
+    // console.log("filteredCategories_store")
+    // return $allPosts_store.filter((post) => post.title.toLowerCase().includes("Svelte".toLowerCase()));
+  // }
+// )

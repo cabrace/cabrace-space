@@ -5,7 +5,7 @@
   import BlogCategories from './BlogCategories.svelte'
 
   // import { checkedCategories_store } from '$lib/stores/blog.js'
-  import { allPosts_store, filteredText_store, filteredPosts_store } from '$lib/stores/blog.js'
+  import { allPosts_store, filteredText_store, filteredPosts_store} from '$lib/stores/blog.js'
 
   export let categories;
   export let post;

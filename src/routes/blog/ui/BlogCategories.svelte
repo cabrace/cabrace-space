@@ -1,68 +1,46 @@
 <script>
-  import { allCategories_store, allPosts_store, checkedCategories_store} from '$lib/stores/blog.js'
+  import { allCategories_store, allPosts_store, selectedCategories_store, filteredCategories_store} from '$lib/stores/blog.js'
 
-  export let categories;
+  /* export let categories; */
+  //Store selected categories here
+  let selectedCategories = []
 
-  //working array
-  let checkedCategories = []
+  function filterCategoryPosts() {
+      let filteredCategoryPosts = []
+      let categories = selectedCategories
 
-  // Store checked values into checkedCategories array.
-  function setCategory(event){
-      let item = event.target.value
-      let checked = event.target.checked // if checked is true
-      let exist = checkedCategories.includes(item)
+      categories.forEach(category => {
+          $allPosts_store.filter((post) =>{
 
-        // Determine which state category is in
-        //if item is checked and not in the list
-        if (checked && !exist) {
-            // add item
-            checkedCategories.push(item)
-            //otherwise, if unchecked and in the list then , remove
+              let lTitle = post.title.toLowerCase()
+              let lCategory = category.toLowerCase()
+              if (lTitle.includes(lCategory)){
+                  filteredCategoryPosts.push(post)
+                }else{
+                return 
+             }
+          })
+      })
 
-            //Apply Posts Filter
-            /* filterCategoryPosts(item) */
-          }
-        else if (!checked && exist){
-              /* console.log("removing", item) */
-              let index = checkedCategories.indexOf(item)
-              checkedCategories.splice(index, 1)
-        }
+      console.log(filteredCategoryPosts)
+  }
+    
 
-      //This store updates filteredPosts_store because its derived from its value
-      checkedCategories_store.set(checkedCategories)
+  function updateCategories() {
+     selectedCategories_store.set(selectedCategories)
+  }
 
-      console.log("$", $checkedCategories_store)
-      /* filterCategoryPosts(); */
-      getCheckedCategories()
-    }
-
-  // Get a difinitive list of checked values by name on every update
-  function getCheckedCategories(){
-      /* console.log("checked categories") */
-      let filterList = []
-      $allCategories_store.filter((category) => {
-          if (category.checked == true) {
-              filterList = [...filterList, category.name]
-          }
-          // One Liner?
-          /* category.checked ? (filterList = [...filterList, category.name]) : (filterList = [...filterList]) */
-        })
-      /* console.log(filterList) */
-      checkedCategories_store.set(filterList)
-      return filterList;
-    }
-
-  /* getCheckedCategories() */
 
 </script>
 
 <nav class="panel">
   <p class="panel-heading">
     Browse By Category
+
   </p>
-  {#each $allCategories_store as {name, checked}}
+  {#each $allCategories_store as {name}}
     <label class="panel-block">
-      <input type="checkbox" bind:checked bind:value="{name}" on:change={getCheckedCategories}>
+      <input type="checkbox" bind:group={selectedCategories} value={name} on:change={filterCategoryPosts} />
       {name}
     </label>
   {/each}
@@ -72,4 +50,5 @@
       Reset Filters
     </button>
   </div>
+    { selectedCategories }
 </nav>

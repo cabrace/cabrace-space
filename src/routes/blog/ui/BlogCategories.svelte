@@ -5,6 +5,7 @@
   //Store selected categories here
   let selectedCategories = []
 
+  //Update posts filtered by category
   function filterCategoryPosts() {
       let filteredCategoryPosts = []
       let categories = selectedCategories
@@ -22,7 +23,9 @@
           })
       })
 
-      console.log(filteredCategoryPosts)
+      console.log(new Set(filteredCategoryPosts))
+      /* console.log(filteredCategoryPosts) */
+      selectedCategories_store.set(new Set(filteredCategoryPosts))
   }
     
 

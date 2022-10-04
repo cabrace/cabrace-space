@@ -29,6 +29,7 @@ export const selectedCategories_store = writable([]);
 
 export const filteredCategoryPosts_store = writable([]);
 
+
 // Derived from allPosts, filteredText, checkedCategories
 export const filteredPosts_store = derived(
   // All values passed in these arrays, trigger this function on update through assignment
@@ -49,9 +50,9 @@ export const filteredCategories_store = derived(
 )
 
 // Depends on above
-// export const filteredCategories_store = derived(
-  // [allPosts_store,selectedCategories_store],[$allPosts_store,$selectedCategories_store]) => {
-    // console.log("filteredCategories_store")
-    // return $allPosts_store.filter((post) => post.title.toLowerCase().includes("Svelte".toLowerCase()));
-  // }
-// )
+export const filterCombinedPosts_store = derived(
+  [filteredPosts_store,filteredCategories_store],([filteredPosts_store,filteredCategories_store]) => {
+    console.log("combined triggered")
+    return ["something"]
+  }
+)

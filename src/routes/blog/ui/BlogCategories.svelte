@@ -1,31 +1,33 @@
 <script>
-  import { allCategories_store, allPosts_store, selectedCategories_store, filteredCategories_store} from '$lib/stores/blog.js'
+  import { allCategories_store, allPosts_store, filteredCategories_store, selectedCategories_store, filteredCategoryPosts_store} from '$lib/stores/blog.js'
 
   /* export let categories; */
-  //Store selected categories here
+
+  //Checked categories array
   let selectedCategories = []
 
   //Update posts filtered by category
-  function filterCategoryPosts() {
-      let filteredCategoryPosts = []
-      let categories = selectedCategories
+  const filterCategoryPosts = () => {
+      let filteredPosts = []
 
-      categories.forEach(category => {
+      //For all categories selected, return posts whose titles also match
+      selectedCategories.forEach(category => {
           $allPosts_store.filter((post) =>{
 
               let lTitle = post.title.toLowerCase()
               let lCategory = category.toLowerCase()
               if (lTitle.includes(lCategory)){
-                  filteredCategoryPosts.push(post)
-                }else{
+                  filteredPosts.push(post)
+                }else{ //if no match, return
                 return 
              }
           })
       })
 
-      console.log(new Set(filteredCategoryPosts))
-      /* console.log(filteredCategoryPosts) */
-      selectedCategories_store.set(new Set(filteredCategoryPosts))
+      /* console.log(new Set(filteredPosts)) */
+      /* $selectedCategories_store = $selectedCategories_store.concat(filteredPosts) */
+     $selectedCategories_store = Array.from(new Set(filteredPosts)) // set resulting array here
+      console.log("selected Categories", $filteredCategories_store)
   }
     
 

@@ -22,7 +22,7 @@ export const allCategories_store = writable([
     {name:"Javascript", checked: false}
   ]);
 
-//On update through bind: set derived postsListings 
+//On update through bind: set derived filteredPosts, 
 export const filteredText_store = writable("")
 
 export const selectedCategories_store = writable([]);
@@ -42,17 +42,18 @@ export const filteredPosts_store = derived(
 
 export const filteredCategories_store = derived(
   // All values passed in these arrays, trigget this function on update through assignment
-  [allPosts_store, selectedCategories_store],([$allPosts_store, $selectedCategories_store]) => {
+  [filteredPosts_store, selectedCategories_store],([$filteredPosts_store, $selectedCategories_store]) => {
     // let filterList = $checkedCategories_store.concat(`${$filteredText_store}`)
-    console.log('filteredCat_store')
-    return $allPosts_store.filter((post) => post.title.toLowerCase().includes("Svelte".toLowerCase()));
+    console.log('filteredCat_storesss')
+    return $filteredPosts_store = $selectedCategories_store
+    // return $allPosts_store.filter((post) => post.title.toLowerCase().includes("Svelte".toLowerCase()));
   }
 )
 
 // Depends on above
 export const filterCombinedPosts_store = derived(
-  [filteredPosts_store,filteredCategories_store],([filteredPosts_store,filteredCategories_store]) => {
+  [filteredPosts_store,filteredCategories_store],([$filteredPosts_store,$filteredCategories_store]) => {
     console.log("combined triggered")
-    return ["something"]
+    return $filteredCategories_store
   }
 )

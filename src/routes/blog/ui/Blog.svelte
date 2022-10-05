@@ -5,7 +5,7 @@
   import BlogCategories from './BlogCategories.svelte'
 
   // import { checkedCategories_store } from '$lib/stores/blog.js'
-  import { allPosts_store, filteredText_store, filteredPosts_store} from '$lib/stores/blog.js'
+  import {filterCombinedPosts_store, allPosts_store, filteredText_store, filteredPosts_store} from '$lib/stores/blog.js'
 
   export let categories;
   export let post;
@@ -40,7 +40,7 @@
       </div>
     </div>
   <h1 class="is-size-1">Posts</h1>
-    {#each $filteredPosts_store as post}
+    {#each $filterCombinedPosts_store as post}
       <BlogPosts {post} />
     {/each}
   </div>

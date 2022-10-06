@@ -6,10 +6,10 @@
   //Checked categories array
   let selectedCategories = []
 
-  //Update posts filtered by category
+  //Scope Post listings based on selected categories
   const filterCategoryPosts = () => {
-      let filteredPosts = []
 
+      let filteredPosts = []
       //For all categories selected, return posts whose titles also match
       selectedCategories.forEach(category => {
           $allPosts_store.filter((post) =>{
@@ -43,9 +43,9 @@
     Browse By Category
 
   </p>
-  {#each $allCategories_store as {name}}
+  {#each $allCategories_store as {name, checked}}
     <label class="panel-block">
-      <input type="checkbox" bind:group={selectedCategories} value={name} on:change={filterCategoryPosts} />
+      <input type="checkbox" bind:group={selectedCategories} bind:checked={checked} value={name} on:change={filterCategoryPosts} />
       {name}
     </label>
   {/each}

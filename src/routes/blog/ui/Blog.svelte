@@ -4,7 +4,6 @@
   import { onMount } from 'svelte';
   import BlogCategories from './BlogCategories.svelte'
 
-  // import { checkedCategories_store } from '$lib/stores/blog.js'
   import {filterCombinedPosts_store, allPosts_store, filteredText_store, filteredPosts_store} from '$lib/stores/blog.js'
 
   export let categories;

@@ -1,27 +1,14 @@
 import { writable, derived } from 'svelte/store';
 import { fade } from 'svelte/transition';
-
+import postData from '$lib/data/posts.json'
+import categoryData from '$lib/data/categories.json'
 
 // Ideally we would load this data from some DB and call onMount()
 // https://www.eternaldev.com/blog/introduction-to-svelte-derived-store/
-export const allPosts_store = writable([
-    {title:"Nginx Config", summary:"A simple container to divide your page into sections, like the one you're currently reading.", tags:"linux nginx server"},
-    {title:"Svelte Blog Post", summary:"A simple container to divide your page into sections, like the one you're currently reading.", tags:"Windows VSCode"},
-    {title:"Svelte Data Bindings", summary:"A simple container to divide your page into sections, like the one you're currently reading.", tags:"Windows VSCode"},
-    {title:"Ruby Code", summary:"A simple container to divide your page into sections, like the one you're currently reading.", tags:"Windows VSCode"},
-    {title:"Sample Title something", summary:"A simple container to divide your page into sections, like the one you're currently reading.", tags:"Windows VSCode"},
-    {title:"General Thoughts", summary:"A simple container to divide your page into sections, like the one you're currently reading.", tags:"Windows VSCode"}
-])
-export const allCategories_store = writable([
-    {name:"Svelte", checked: false},
-    {name:"Nginx", checked: false},
-    {name:"NextJS", checked: false},
-    {name:"Ruby", checked: false},
-    {name:"Python", checked: false},
-    {name:"General", checked: false},
-    {name:"Thoughts", checked: false},
-    {name:"Javascript", checked: false}
-  ]);
+
+//moved posts hard-coded data to json file instead
+export const allPosts_store = writable(postData)
+export const allCategories_store = writable(categoryData);
 
 //On update through bind: set derived filteredPosts, 
 export const filteredText_store = writable("")

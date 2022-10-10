@@ -1,8 +1,8 @@
 <script>
   /* import Panel from '$lib/components/Panel.svelte' */
-  import BlogPosts from './BlogPosts.svelte'
+  import BlogPosts from './blog_posts.svelte'
   import { onMount } from 'svelte';
-  import BlogCategories from './BlogCategories.svelte'
+  import BlogCategories from './blog_categories.svelte'
 
   import {filterCombinedPosts_store, allPosts_store, filteredText_store, filteredPosts_store} from '$lib/stores/blog.js'
 

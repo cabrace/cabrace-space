@@ -52,7 +52,7 @@ Both `data` and `posts` directories exist in the `project root` folder outside o
 
 The only other *special* folder outside of those would be the 
 `/src/lib/*` folder where namely an `api` folders exists along wither other folders that handle different parts of the app. Here we will
-mainly focus on these folders for deeper investigation, whilst others may be briefly mentioned
+mainly focus on these folders for 
 
 ---------------
 

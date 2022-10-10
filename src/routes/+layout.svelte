@@ -7,6 +7,6 @@
 <Nav />
 <main class="main">
     <!-- Content -->
-  <slot />
+    <slot />
 </main>
 <Footer />

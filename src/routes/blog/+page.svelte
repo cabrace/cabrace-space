@@ -1,5 +1,5 @@
 <script> 
-  import Blog from "./ui/Blog.svelte"
+  import Blog from "./ui/blog.svelte"
   import {allPosts_store, allCategories_store} from "$lib/stores/blog.js"
 
   //DATA 

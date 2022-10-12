@@ -61,7 +61,7 @@ _**$lib/api folder**_
 
 - `markdown.ts`: deals with all of the remark / rehype plugin ecosphere, all of its associated imports and configuration.
 - `plugins.js` : continues more plugin implementation of helper functions.
-- `posts.ts` : this is another `'key-file'` to the app as this one handles helper functionality as it relates to getting, updating, sorting of posts data and more. Also noted here is a reference to:
+- `posts.ts` : this is another _core-file_ to the app as this one handles helper functionality as it relates to getting, updating, sorting of posts data and more. Also noted here is a reference to:
 `'$lib/types'`. More on this one later 
 
 ---------------

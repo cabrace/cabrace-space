@@ -39,8 +39,8 @@
 </script>
 
 <nav class="panel">
-  <p class="panel-heading">
-    Browse By Category
+  <p class="panel-heading is-size-6">
+    Filter By Category
 
   </p>
   {#each $allCategories_store as {name, checked}}

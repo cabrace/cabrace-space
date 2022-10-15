@@ -27,25 +27,28 @@
     <!-- <h2>Loading....</h2> -->
 <!-- {:then post} -->
 
-<div class="columns">
-  <div class="column">
-    <div class="field">
-      <div class="control is-medium">
-        <input  class="input is-medium" bind:value={$filteredText_store} type="text" placeholder="Search posts ....">
-         <!-- {#each $filteredPosts_store as post}
+
+<div class="blog mt-6">
+  <div class="columns">
+    <div class="column">
+      <div class="field">
+        <div class="control is-medium">
+          <input  class="input is-medium" bind:value={$filteredText_store} type="text" placeholder="Search posts ....">
+          <!-- {#each $filteredPosts_store as post}
             {post.title}
-         {/each}
-         -->
+          {/each}
+          -->
+        </div>
       </div>
+      {#each $filterCombinedPosts_store as post}
+        <BlogPosts {post} />
+      {/each}
     </div>
-  <h1 class="is-size-1">Posts</h1>
-    {#each $filterCombinedPosts_store as post}
-      <BlogPosts {post} />
-    {/each}
-  </div>
-  <div class="column is-one-third">
-    <BlogCategories {categories} />
-  <!-- { $checkedCategories_store } -->
+    <div class="column is-one-fifth">
+      <BlogCategories {categories} />
+      <!-- { $checkedCategories_store } -->
+    </div>
   </div>
 </div>
+
 <!-- {/await} -->

@@ -1,32 +1,44 @@
 [
   {
     "title":"Nginx Config", 
+    "date":"2022-01-09",
+    "updated":"2022-03-04",
     "summary":"A simple container to divide your page into sections, like the one you're currently reading.", 
-    "tags":"linux nginx server"
+    "tags":["linux","nginx","server"]
   },
   {
     "title":"Svelte Blog Post", 
+    "date":"2022-01-09",
+    "updated":"2022-03-04",
     "summary":"A simple container to divide your page into sections, like the one you're currently reading.", 
-    "tags":"Windows VSCode"
+    "tags":[ "Windows", "VSCode"]
   },
   {
     "title":"Svelte Data Bindings", 
+    "date":"2022-01-09",
+    "updated":"2022-03-04",
     "summary":"A simple container to divide your page into sections, like the one you're currently reading.", 
-    "tags":"Windows VSCode"
+    "tags":["Windows", "VSCode"]
   },
-  {"title":"Ruby Code", 
+  {
+    "title":"Ruby Code", 
+    "date":"2022-01-09",
+    "updated":"2022-03-04",
     "summary":"A simple container to divide your page into sections, like the one you're currently reading.", 
-    "tags":"Windows VSCode"
+    "tags":["Windows", "VSCode"]
   },
   {
     "title":"Sample Title something", 
+    "date":"2022-01-09",
+    "updated":"2022-03-04",
     "summary":"A simple container to divide your page into sections, like the one you're currently reading.", 
-    "tags":"Windows VSCode"
+    "tags":["Windows", "VSCode"]
   },
   {
     "title":"General Thoughts", 
+    "date":"2022-01-09",
     "summary":"A simple container to divide your page into sections, like the one you're currently reading.", 
-    "tags":"Windows VSCode"
+    "tags":["Windows", "VSCode"]
   }
 ]
 

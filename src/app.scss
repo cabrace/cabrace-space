@@ -1,6 +1,6 @@
 @import 'styles/styles.scss'; 
 
-//Color palette
+// C o l o r - P a l e t t e
 $blue: #03a9f4;
 $blue-green: #00bcd4;
 
@@ -26,7 +26,27 @@ $control-border-width: 2px;
 $input-border-color: transparent;
 $input-shadow: none;
 
+//Navbar 
+$navbar-background-color: $beige-lighter;
+$navbar-item-hover-background-color: none;
+
 /* Write your global styles here, in SCSS syntax. Variables and mixins from the src/variables.scss file are available here without importing */ /* Write your global styles here, in SCSS syntax. Variables and mixins from the src/variables.scss file are available here without importing */ /* Write your global styles here, in SCSS syntax. Variables and mixins from the src/variables.scss file are available here without importing */ /* Import only what you need from Bulma */
+@media screen and (min-width: 1024px){
+  .navbar-menu {
+    flex-grow: 0 !important;
+    flex-shrink: 0;
+  }
+}
+
+@media screen and (min-width: 1024px){
+.navbar, .navbar-menu, .navbar-start, .navbar-end {
+  align-items: stretch;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+ }
+}
+
 @import 'bulma/sass/utilities/_all';
 @import 'bulma/sass/base/_all';
 @import 'bulma/sass/elements/_all';

@@ -26,19 +26,23 @@
 
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start">
+      <a href="/blog" class="navbar-item">
+        About
+      </a>
       <a href="/" class="navbar-item">
         Home
       </a>
-
       <a href="/blog" class="navbar-item">
         Blog
+      </a>
+      <a href="/blog" class="navbar-item">
+        Photography
       </a>
 
       <!-- <div class="navbar-item has-dropdown is-hoverable"> -->
         <!-- <a href= "/#" class="navbar-link"> -->
           <!-- More -->
         <!-- </a> -->
-<!--  -->
         <!-- <div class="navbar-dropdown"> -->
           <!-- <a href="/#" class="navbar-item"> -->
             <!-- About -->
@@ -57,18 +61,19 @@
       <!-- </div> -->
     </div>
 
-    <div class="navbar-end">
-      <div class="navbar-item">
-        <div class="buttons">
-          <a href="/#" class="button is-primary">
-            <strong>Sign up</strong>
-          </a>
-          <a href="/#" class="button is-light">
-            Log in
-          </a>
-        </div>
-      </div>
-    </div>
+    <!-- <div class="navbar-end"> -->
+      <!-- <div class="navbar-item"> -->
+        <!-- <div class="buttons"> -->
+          <!-- <a href="/#" class="button is-primary"> -->
+            <!-- <strong>Sign up</strong> -->
+          <!-- </a> -->
+          <!-- <a href="/#" class="button is-light"> -->
+            <!-- Log in -->
+          <!-- </a> -->
+        <!-- </div> -->
+      <!-- </div> -->
+    <!-- </div> -->
+
   </div>
 </nav>
 

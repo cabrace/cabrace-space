@@ -30,16 +30,7 @@ export let title, date, updated, sample, form, data
 
 <div class="columns">
   <div class="column">
-    <div class="field">
-      <div class="control is-medium">
-        <input  class="input is-medium" bind:value={$filteredText_store} type="text" placeholder="Search posts ....">
-         <!-- {#each $filteredPosts_store as post}
-            {post.title}
-         {/each}
-         -->
-      </div>
-    </div>
-  <h1 class="is-size-1">Posts</h1>
+  <!-- <h1 class="is-size-1">Posts</h1> -->
 <section class="section content box">
   wrapper(post.svelte)
   <!-- <h1>{title}</h1> -->

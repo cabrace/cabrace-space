@@ -1,7 +1,20 @@
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <p class="title logo is-size-1 flex-center">
+      CaBrace.
+    </p>
+      <p class="sub-logo flex-center">
+     [ space ]
+    </p>
+  </div>
+</section>
+
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <a href="/#" class="navbar-item">
-      <img alt="Logo" src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+    <a href="/#" class="navbar-item logo is-size-3">
+      <!-- <img alt="Logo" src="https://bulma.io/images/bulma-logo.png" width="112" height="28"> -->
+      <!-- CaBrace.[Space] -->
     </a>
 
     <a href="/#" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -58,3 +71,60 @@
     </div>
   </div>
 </nav>
+
+<style lang="scss">
+
+  a.navbar-item{
+    font-family: ""
+  }
+
+  .line {
+    align-items: center;
+    margin: 1em -1em;
+
+    &:before,
+    &:after {
+      height: 1px;
+      margin: 0 1em;
+    }
+  }
+  .divider {
+    display: flex;
+
+    &:before,
+    &:after {
+      content: "";
+      flex: 1;
+    }
+  }
+  .one-line {
+    &:before,
+    &:after {
+      background: black;
+    }
+  }
+  .flex-center{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+  }
+  .logo{
+    //font-family:"FuzzyBubbles";
+  font-family:"Caveat";
+  color:black;
+  }
+  .sub-logo{
+    margin-top:-20px;
+    font-family:"FuzzyBubblaes";
+    font-family: "BlinkMacSystemFont", "-apple-system", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    color:black;
+    font-size: 1.5rem;
+    text-transform:uppercase;
+  }
+  .sample{
+    display:flex;
+    alight-items:center;
+    align-content:center;
+  }
+</style>

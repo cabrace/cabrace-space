@@ -1,10 +1,13 @@
 <script>
-  import { allCategories_store, allPosts_store, filteredCategories_store, selectedCategories_store, filteredCategoryPosts_store} from '$lib/stores/blog.js'
+  import { allCategories_store, allPosts_store, filteredCategories_store, selectedCategories_store, filteredCategoryPosts_store, filteredText_store} from '$lib/stores/blog.js'
 
   /* export let categories; */
 
   //Checked categories array
   let selectedCategories = []
+
+  //EXperimental -- Update search params based on selected categories
+  $: $filteredText_store = selectedCategories.join(" ")
 
   //Scope Post listings based on selected categories
   const filterCategoryPosts = () => {
@@ -30,6 +33,9 @@
       console.log("selected Categories", $filteredCategories_store)
   }
     
+  function clearSelected() {
+    selectedCategories = [];
+  } 
 
   function updateCategories() {
      selectedCategories_store.set(selectedCategories)
@@ -51,8 +57,8 @@
   {/each}
 
   <div class="panel-block">
-    <button class="button is-link is-outlined is-fullwidth">
-      Reset Filters
+    <button on:click={clearSelected} class="button is-link is-outlined is-fullwidth">
+      Clear All
     </button>
   </div>
     { selectedCategories }

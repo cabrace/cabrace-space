@@ -4,9 +4,12 @@
   import Footer from '$lib/components/layout/Footer.svelte'
 </script>
 
-<Nav />
-<main class="main">
-    <!-- Content -->
-    <slot />
-</main>
+<section class="section">
+  <header>
+    <Nav />
+  </header>
+  <main class="main">
+    <slot /> <!-- pure page content -->
+  </main>
+</section>
 <Footer />

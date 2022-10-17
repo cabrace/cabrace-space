@@ -7,3 +7,9 @@
     </p>
   </div>
 </footer>
+
+<style lang="scss">
+  .footer{
+    background:black;
+  }
+</style>

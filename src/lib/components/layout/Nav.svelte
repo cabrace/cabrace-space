@@ -1,7 +1,7 @@
 
 <section class="hero is-small">
   <div class="hero-body">
-    <p class="title logo is-size-1 flex-center">
+    <p class="title logo flex-center">
       CaBrace.
     </p>
       <p class="sub-logo flex-center">
@@ -34,27 +34,27 @@
         Blog
       </a>
 
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a href= "/#" class="navbar-link">
-          More
-        </a>
-
-        <div class="navbar-dropdown">
-          <a href="/#" class="navbar-item">
-            About
-          </a>
-          <a href="/#" class="navbar-item">
-            Jobs
-          </a>
-          <a href="/#" class="navbar-item">
-            Contact
-          </a>
-          <hr class="navbar-divider">
-          <a href="/#" class="navbar-item">
-            Report an issue
-          </a>
-        </div>
-      </div>
+      <!-- <div class="navbar-item has-dropdown is-hoverable"> -->
+        <!-- <a href= "/#" class="navbar-link"> -->
+          <!-- More -->
+        <!-- </a> -->
+<!--  -->
+        <!-- <div class="navbar-dropdown"> -->
+          <!-- <a href="/#" class="navbar-item"> -->
+            <!-- About -->
+          <!-- </a> -->
+          <!-- <a href="/#" class="navbar-item"> -->
+            <!-- Jobs -->
+          <!-- </a> -->
+          <!-- <a href="/#" class="navbar-item"> -->
+            <!-- Contact -->
+          <!-- </a> -->
+          <!-- <hr class="navbar-divider"> -->
+          <!-- <a href="/#" class="navbar-item"> -->
+            <!-- Report an issue -->
+          <!-- </a> -->
+        <!-- </div> -->
+      <!-- </div> -->
     </div>
 
     <div class="navbar-end">
@@ -75,7 +75,8 @@
 <style lang="scss">
 
   a.navbar-item{
-    font-family: ""
+    font-family: "UbuntuMono";
+    font-size: 1.5rem;
   }
 
   .line {
@@ -111,15 +112,17 @@
   }
   .logo{
     //font-family:"FuzzyBubbles";
-  font-family:"Caveat";
-  color:black;
+    font-family:"Caveat";
+    color:black;
+    font-size: 70px;
   }
   .sub-logo{
     margin-top:-20px;
+    // font-family: "UbuntuMono";
     font-family:"FuzzyBubblaes";
-    font-family: "BlinkMacSystemFont", "-apple-system", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    // font-family: "BlinkMacSystemFont", "-apple-system", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
     color:black;
-    font-size: 1.5rem;
+    font-size: 2rem;
     text-transform:uppercase;
   }
   .sample{

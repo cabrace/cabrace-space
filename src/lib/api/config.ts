@@ -13,8 +13,9 @@ export const postImage = 'https://social-share-images.vercel.app/'
 
 export const api = 'https://api.github.com'
 export const owner = 'cabrace'
-export const repo = 'cabrace'
+export const repo = 'cabrace-space'
 export const path = 'posts'
+export const branch = 'integrate-gh-posts'
 
 export const categories = {
 	javascript: 'JavaScript',

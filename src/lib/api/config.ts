@@ -1,19 +1,19 @@
-export const siteName = 'Joy Of Code'
+export const siteName = 'CaBrace'
 export const siteUrl = 'https://joyofcode.xyz/'
-export const siteTitle = 'Joy of Code'
+export const siteTitle = 'CaBrace'
 export const siteDescription =
 	'Digital garden growing curious minds with articles about HTML, CSS, JavaScript and things related to web development and design.'
 export const siteImage = `${siteUrl}social.png`
 export const postImage = 'https://social-share-images.vercel.app/'
 
-export const twitterHandle = '@joyofcodedev'
-export const twitter = 'https://twitter.com/joyofcodedev'
-export const youtube = 'https://www.youtube.com/c/joyofcodedev'
-export const github = 'https://github.com/mattcroat'
+// export const twitterHandle = '@joyofcodedev'
+// export const twitter = 'https://twitter.com/joyofcodedev'
+// export const youtube = 'https://www.youtube.com/c/joyofcodedev'
+// export const github = 'https://github.com/mattcroat'
 
 export const api = 'https://api.github.com'
-export const owner = 'mattcroat'
-export const repo = 'joy-of-code'
+export const owner = 'cabrace'
+export const repo = 'cabrace'
 export const path = 'posts'
 
 export const categories = {
@@ -40,4 +40,3 @@ export const fileUrl = `https://github.com/${owner}/${repo}/blob/main/posts`
 
 // https://raw.githubusercontent.com/user/repo/main/posts/post-slug/images/image.webp
 export const imagesUrl = `https://raw.githubusercontent.com/${owner}/${repo}/main/posts`
-

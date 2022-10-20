@@ -13,3 +13,9 @@
   </main>
 </section>
 <Footer />
+
+<style>
+ main.main {
+    min-height:calc(100vh - 531px)
+ }
+</style>

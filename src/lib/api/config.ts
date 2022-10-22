@@ -6,10 +6,10 @@ export const siteDescription =
 export const siteImage = `${siteUrl}social.png`
 export const postImage = 'https://social-share-images.vercel.app/'
 
-// export const twitterHandle = '@joyofcodedev'
-// export const twitter = 'https://twitter.com/joyofcodedev'
-// export const youtube = 'https://www.youtube.com/c/joyofcodedev'
-// export const github = 'https://github.com/mattcroat'
+export const twitterHandle = '@joyofcodedev'
+export const twitter = 'https://twitter.com/joyofcodedev'
+export const youtube = 'https://www.youtube.com/c/joyofcodedev'
+export const github = 'https://github.com/mattcroat'
 
 export const api = 'https://api.github.com'
 export const owner = 'cabrace'
@@ -33,7 +33,7 @@ export const categories = {
 
 // https://api.github.com/repos/user/repo/contents/data/posts.json
 // https://api.github.com/repos/cabrace/cabrace-space/contents/posts?ref=integrate-gh-posts
-export const postsDataUrl = `${api}/repos/${owner}/${repo}/contents/data/posts.json`
+export const postsDataUrl = `${api}/repos/${owner}/${repo}/contents/data/posts.json?ref=${branch}`
 // export const postsDataUrl = `${api}/repos/${owner}/${repo}/contents/data/posts.json`
 
 // https://api.github.com/repos/user/repo/contents/posts

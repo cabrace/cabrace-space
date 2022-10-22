@@ -2,39 +2,39 @@
 	import { ArrowNarrowRightIcon } from '@rgossiaux/svelte-heroicons/outline'
 	import type { PageServerData } from './$types'
 
-	import Newsletter from '$lib/shared/ui/newsletter.svelte'
+	// import Newsletter from '$lib/shared/ui/newsletter.svelte'
 	import Posts from '$lib/shared/ui/posts.svelte'
 
-	// import {
-		// siteDescription,
-    // siteImage,
-		// siteName,
-		// siteTitle,
-		// siteUrl,
-    // twitter,
-    // twitterHandle,
-	// } from '$lib/api/config'
-//
+  import {
+    siteDescription,
+    siteImage,
+    siteName,
+    siteTitle,
+    siteUrl,
+    twitter,
+    twitterHandle,
+  } from '$lib/api/config'
+
   export let data: PageServerData
-// </script>
-//
-// <svelte:head>
-	// <title>{siteTitle}</title>
-//
-	// <meta content={siteDescription} name="description" />
-//
-	// <meta content={siteTitle} property="og:title" />
-	// <meta content={siteImage} property="og:image" />
-	// <meta content={siteUrl} property="og:url" />
-	// <meta content={siteDescription} property="og:description" />
-	// <meta content={siteName} property="og:site_name" />
-//
-	// <meta content={twitterHandle} name="twitter:creator" />
-	// <meta content="summary_large_image" name="twitter:card" />
-	// <meta content={siteTitle} name="twitter:title" />
-	// <meta content={siteDescription} name="twitter:description" />
-	// <meta content={siteImage} name="twitter:image" />
-// </svelte:head>
+</script>
+
+<svelte:head>
+  <title>{siteTitle}</title>
+
+  <meta content={siteDescription} name="description" />
+
+  <meta content={siteTitle} property="og:title" />
+  <meta content={siteImage} property="og:image" />
+  <meta content={siteUrl} property="og:url" />
+  <meta content={siteDescription} property="og:description" />
+  <meta content={siteName} property="og:site_name" />
+
+  <meta content={twitterHandle} name="twitter:creator" />
+  <meta content="summary_large_image" name="twitter:card" />
+  <meta content={siteTitle} name="twitter:title" />
+  <meta content={siteDescription} name="twitter:description" />
+  <meta content={siteImage} name="twitter:image" />
+</svelte:head>
 
 <main>
 	<section class="hero">
@@ -58,7 +58,7 @@
 
 		<div class="newsletter">
 			<h2>Subscribe for updates</h2>
-			<Newsletter />
+			<!-- <Newsletter /> -->
 			<p>
 				Subscribe to the <a href="/rss.xml" target="_blank">RSS feed</a>
 				or

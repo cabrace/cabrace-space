@@ -66,6 +66,7 @@ export async function getPostsData() {
 	}
 
 	const posts: PostType[] = await response.json()
+  // console.log(posts)
 	return posts
 }
 

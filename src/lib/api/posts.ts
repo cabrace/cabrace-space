@@ -51,11 +51,13 @@ export async function getRateLimit(): Promise<RateType> {
  * Get posts data from `data/posts.json` on GitHub
  */
 export async function getPostsData() {
+  console.log("getPostsData, ", postsDataUrl)
 	const response = await fetch(postsDataUrl, {
 		headers: {
 			...headers,
 			// https://docs.github.com/en/rest/overview/media-types
-			Accept: 'application/vnd.github.v3.raw',
+			// Accept: 'application/vnd.github.v3.raw',
+      Accept: 'Accept: application/vnd.github.raw',
 		},
 	})
 
@@ -71,6 +73,7 @@ export async function getPostsData() {
  * Turn posts from GitHub into categories
  */
 export async function getPosts(): Promise<PostsType> {
+  console.log("getPOsts")
 	const data = await getPostsData()
 	const postLimit = 4
 	const characterLimit = 80

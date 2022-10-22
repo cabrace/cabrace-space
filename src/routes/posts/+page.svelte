@@ -15,7 +15,7 @@
     // twitterHandle,
 	// } from '$lib/api/config'
 //
-	// export let data: PageServerData
+  export let data: PageServerData
 // </script>
 //
 // <svelte:head>

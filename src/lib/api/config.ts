@@ -28,10 +28,13 @@ export const categories = {
 	typescript: 'TypeScript',
 	svelte: 'Svelte',
 	sveltekit: 'SvelteKit',
+  branch:'integrate-gh-posts'
 }
 
 // https://api.github.com/repos/user/repo/contents/data/posts.json
+// https://api.github.com/repos/cabrace/cabrace-space/contents/posts?ref=integrate-gh-posts
 export const postsDataUrl = `${api}/repos/${owner}/${repo}/contents/data/posts.json`
+// export const postsDataUrl = `${api}/repos/${owner}/${repo}/contents/data/posts.json`
 
 // https://api.github.com/repos/user/repo/contents/posts
 export const postsUrl = `${api}/repos/${owner}/${repo}/contents/${path}`

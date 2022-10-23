@@ -9,5 +9,6 @@ export const load: PageServerLoad = async ({ setHeaders }) => {
 		'Cache-Control': `public, max-age=${60 * 60}, s-maxage=${60 * 60}`,
 	})
 
+    console.log(posts)
 	return { posts }
 }

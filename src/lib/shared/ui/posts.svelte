@@ -13,6 +13,7 @@
 	<div class="cards">
 		{#each posts as post, index}
     <!-- <a data-sveltekit-prefetch href="/{post.slug}"> -->
+  <!-- <Transition transition={{ type: 'stagger', duration: index, delay: 300 }}> -->
     <a href="/{post.slug}">
       <article class="card">
         <span class="views">
@@ -31,6 +32,7 @@
         </div>
       </article>
     </a>
+    <!-- </Transition> -->
 		{/each}
 	</div>
 

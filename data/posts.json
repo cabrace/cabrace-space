@@ -1,36 +1,11 @@
 [
   {
-    "views": 753,
-    "title": "Animation With Svelte",
-    "description": "Master animation with Svelte from regular and custom transitions to using other animation libraries.",
-    "slug": "animation-with-svelte",
-    "published": "2022-9-22",
-    "category": "svelte",
-    "series": false
-  },
-  {
-    "views": 777,
-    "title": "How Code Sandboxes Update Content",
-    "description": "How do code sandboxes update the iframe without causing flashing?",
-    "slug": "avoid-flashing-iframe",
-    "published": "2021-9-29",
-    "category": "javascript"
-  },
-  {
     "views": 434,
     "title": "Clean Git History Using Rebase",
     "description": "How to have a clean Git history using rebase.",
     "slug": "clean-git-history",
     "published": "2021-6-7",
     "category": "git"
-  },
-  {
-    "views": 5039,
-    "title": "Create a JavaScript Code Sandbox",
-    "description": "Create a JavaScript code sandbox using Vite and TypeScript.",
-    "slug": "create-a-coding-sandbox",
-    "published": "2021-9-15",
-    "category": "typescript"
   },
   {
     "views": 1252,

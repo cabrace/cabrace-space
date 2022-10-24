@@ -74,7 +74,7 @@ export async function getPostsData() {
  * Turn posts from GitHub into categories
  */
 export async function getPosts(): Promise<PostsType> {
-  console.log("getPOsts")
+  console.log("getP0sts")
 	const data = await getPostsData()
 	const postLimit = 4
 	const characterLimit = 80
@@ -153,7 +153,8 @@ export async function getPostsByCategory(
  * Get post by slug from GitHub
  */
 export async function getPost(slug: string): Promise<PostMarkdownType> {
-	const postUrl = `${postsUrl}/${slug}/${slug}.md`
+	const postUrl = `${postsUrl}/${slug}/${slug}.md?ref=integrate-gh-posts`
+  console.log("getPost()", postUrl)
 
 	const response = await fetch(postUrl, {
 		headers: {

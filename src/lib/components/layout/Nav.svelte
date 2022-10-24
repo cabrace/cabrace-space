@@ -29,8 +29,8 @@
       <a href="/blog" class="navbar-item">
         About
       </a>
-      <a href="/" class="navbar-item">
-        Home
+      <a href="/posts" class="navbar-item">
+        Posts
       </a>
       <a href="/blog" class="navbar-item">
         Blog

@@ -38,7 +38,7 @@ console.log("postsDataUrl :", postsDataUrl)
 // export const postsDataUrl = `${api}/repos/${owner}/${repo}/contents/data/posts.json`
 
 // https://api.github.com/repos/user/repo/contents/posts
-export const postsUrl = `${api}/repos/${owner}/${repo}/contents/${path}?ref=${branch}`
+export const postsUrl = `${api}/repos/${owner}/${repo}/contents/${path}`
 console.log("postsUrl :", postsUrl)
 
 // https://github.com/user/repo/blob/main/posts

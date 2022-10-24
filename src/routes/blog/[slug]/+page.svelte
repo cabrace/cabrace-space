@@ -13,7 +13,7 @@
 -->
 <script>
   /* import Panel from '$lib/components/Panel.svelte' */
-  import BlogPosts from './blog_posts.svelte'
+  // import BlogPosts from './blog_posts.svelte'
   import { onMount } from 'svelte';
   import BlogCategories from './blog_categories.svelte'
 

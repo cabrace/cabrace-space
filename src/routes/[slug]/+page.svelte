@@ -21,6 +21,7 @@
 	let editUrl = `${fileUrl}/${data.frontmatter.slug}/${data.frontmatter.slug}.md?ref=integrate-gh-posts`
 	let image = `${postImage}${encodeURIComponent(data.frontmatter.title)}.png`
   console.log("editUrl ", editUrl)
+  console.log("image ", image)
 
 	/* if (!dev && browser) { */
 		/* updateViews(data.frontmatter.slug) */

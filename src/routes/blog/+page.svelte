@@ -1,9 +1,9 @@
 <script lang="ts"> 
-  // import Blog from "./ui/blog.svelte"
+  import Blog from "./ui/blog.svelte"
   import { onMount } from 'svelte';
   import {allPosts_store, allCategories_store} from "$lib/stores/blog.js"
   import { fade } from 'svelte/transition';
-	import Posts from '$lib/shared/ui/posts_restyle.svelte'
+	// import Posts from '$lib/shared/ui/posts_restyle.svelte'
 
   //DATA 
   let posts = $allPosts_store
@@ -11,7 +11,7 @@
   //Added sample
   import type { PostType } from '$lib/types'
   // export let posts: PostType[] // for blog
-  export let data: PageServerData;
+  // export let data: PageServerData;
 
   /* let categories = ["Svelte","Nginx","NextJS", "Ruby", "Python", "General", "Thoughts", "JavaScript", "Something else"].sort() */
   let categories = $allCategories_store;
@@ -26,11 +26,11 @@
 
 </script>
 
-<!-- <Blog {posts} {categories} /> -->
+<Blog {posts} {categories} />
 
-<Posts posts={data.posts.posts}>
-  <h3 class="picks" slot="title">Picks</h3>
-</Posts>
+<!-- <Posts posts={data.posts.posts}> -->
+  <!-- <h3 class="picks" slot="title">Picks</h3> -->
+<!-- </Posts> -->
 
 <style lang="scss">
   .post-tag button {

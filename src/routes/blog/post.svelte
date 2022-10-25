@@ -8,7 +8,7 @@
 
   export let categories;
   export let post;
-export let title, date, updated, sample, form, data
+  /* export let title, date, updated, sample, form, data */
 
 
   // Very cool way to load data check {await block also}

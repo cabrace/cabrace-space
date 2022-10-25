@@ -153,7 +153,7 @@ export async function getPostsByCategory(
  * Get post by slug from GitHub
  */
 export async function getPost(slug: string): Promise<PostMarkdownType> {
-	const postUrl = `${postsUrl}/${slug}/${slug}.md?ref=integrate-gh-posts`
+	const postUrl = `${postsUrl}/${slug}/${slug}.md`
   console.log("getPost()", postUrl)
 
 	const response = await fetch(postUrl, {

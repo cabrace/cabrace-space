@@ -11,8 +11,8 @@
   export let post;
 
 // Restyle
-  import type { PostType } from '$lib/types'
-  export let data: PageServerData;
+  /* import type { PostType } from '$lib/types' */
+  /* export let data: PageServerData; */
 
 
   // Very cool way to load data check {await block also}
@@ -49,9 +49,9 @@
       {#each $filterCombinedPosts_store as post}
         <BlogPosts {post} />
       {/each}
-<Posts posts={data.posts.posts}>
-  <h3 class="picks" slot="title">Picks</h3>
-</Posts>
+<!-- <Posts posts={data.posts.posts}> -->
+  <!-- <h3 class="picks" slot="title">Picks</h3> -->
+<!-- </Posts> -->
     </div>
     <div class="column is-one-fifth">
       <BlogCategories {categories} />

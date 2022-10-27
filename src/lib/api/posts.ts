@@ -1,7 +1,7 @@
 import { GH_TOKEN } from '$env/static/private'
 
 import { markdownToHTML } from './markdown'
-import { postsDataUrl, postsUrl } from './config'
+import { postsDataUrl, postsUrl, branch } from './config'
 import type {
 	PostMarkdownType,
 	PostsType,
@@ -153,7 +153,7 @@ export async function getPostsByCategory(
  * Get post by slug from GitHub
  */
 export async function getPost(slug: string): Promise<PostMarkdownType> {
-	const postUrl = `${postsUrl}/${slug}/${slug}.md`
+	const postUrl = `${postsUrl}/${slug}/${slug}.md?ref=${branch}`
   console.log("getPost()", postUrl)
 
 	const response = await fetch(postUrl, {

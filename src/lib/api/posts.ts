@@ -153,6 +153,7 @@ export async function getPostsByCategory(
  * Get post by slug from GitHub
  */
 export async function getPost(slug: string): Promise<PostMarkdownType> {
+  let ref = `?ref=${branch}`
 	const postUrl = `${postsUrl}/${slug}/${slug}.md?ref=${branch}`
   console.log("getPost()", postUrl)
 

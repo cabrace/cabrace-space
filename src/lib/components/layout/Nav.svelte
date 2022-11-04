@@ -124,10 +124,12 @@
   .sub-logo{
     margin-top:-20px;
     // font-family: "UbuntuMono";
-    font-family:"FuzzyBubblaes";
+    // font-family:"FuzzyBubblaes";
+    font-family:"sawah";
     // font-family: "BlinkMacSystemFont", "-apple-system", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
     color:black;
-    font-size: 2rem;
+    // font-size: 2rem;
+    font-size:1.1rem;
     text-transform:uppercase;
   }
   .sample{

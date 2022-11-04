@@ -41,9 +41,9 @@
 
 <main>
 
-	<Posts posts={data.posts.posts}>
-		<h3 class="popular" slot="title">Popular</h3>
-	</Posts>
+  <!-- <Posts posts={data.posts.posts}> -->
+    <!-- <h3 class="popular" slot="title">Popular</h3> -->
+  <!-- </Posts> -->
 
   <Blog posts={data.posts.posts} categories={["None"]} />
 

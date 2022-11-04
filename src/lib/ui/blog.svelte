@@ -8,7 +8,6 @@
   import {filterCombinedPosts_store, allPosts_store, filteredText_store, filteredPosts_store} from '$lib/stores/blog.js'
 
   export let categories;
-  export let post;
   export let posts;
 
 
@@ -24,7 +23,8 @@
       // postPromise = fetch('https://jsonplaceholder.typicode.com/posts').then((data) => data.json()).then((post) => {
           // $allPosts_store = post;
         // });
-        console.log(posts)
+        console.log("BLOG.svelte", posts)
+        console.log($filterCombinedPosts_store)
     })
   
 
@@ -48,7 +48,7 @@
           -->
         </div>
       </div>
-      {#each $filterCombinedPosts_store as post}
+      {#each posts as post}
         <BlogPosts {post} />
       {/each}
 <!-- <Posts posts={data.posts.posts}> -->

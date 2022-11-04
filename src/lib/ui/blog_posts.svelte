@@ -1,20 +1,21 @@
 <script>
  export let post;
+  
 import { fade } from 'svelte/transition';
 </script>
 
 <div class="box posts" transition:fade>
-  <a href="/blog/chris-likes-svelte">
+  <a href="/posts/{post.slug}">
     <h1 class="title is-size-3">{post.title}</h1>
   </a>
   <h2 class="subtitle summary is-size-6 mt-2 mb-5">
     <!-- {post.body} USED for data fetch onMount example -->
-    {post.summary}
+    {post.description}
   </h2>
   <div class="post-tag columns mb-1">
-    {#each post.tags as tag}
-      <button class="button border-dashed">{tag}</button>
-    {/each}
+    <!-- {#each post.tags as tag} -->
+      <!-- <button class="button border-dashed">{tag}</button> -->
+    <!-- {/each} -->
   </div>
 </div>
 

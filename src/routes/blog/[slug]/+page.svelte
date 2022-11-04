@@ -15,7 +15,7 @@
   /* import Panel from '$lib/components/Panel.svelte' */
   // import BlogPosts from './blog_posts.svelte'
   import { onMount } from 'svelte';
-  import BlogCategories from './blog_categories.svelte'
+  import BlogCategories from '../ui/blog_categories.svelte'
 
   import {filterCombinedPosts_store, allPosts_store, filteredText_store, filteredPosts_store} from '$lib/stores/blog.js'
 
@@ -27,11 +27,11 @@
   // Very cool way to load data check {await block also}
   /* let postPromise; */
 
-  /* onMount(() => { */
-      /* postPromise = fetch('https://jsonplaceholder.typicode.com/posts').then((data) => data.json()).then((post) => { */
-          /* $allPosts_store = post; */
-        /* }); */
-    /* }) */
+  onMount(() => {
+      postPromise = fetch('https://jsonplaceholder.typicode.com/posts').then((data) => data.json()).then((post) => {
+          $allPosts_store = post;
+        });
+    })
   
 
 </script>

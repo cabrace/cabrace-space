@@ -6,7 +6,7 @@ export async function load({ params }){
   const post = await import(`../${params.slug}.md`)
 
   if (post) {
-    console.log("metadata" post)
+    console.log("metadata", post)
     const { title, date } = post.metadata
     const content = post.default
 

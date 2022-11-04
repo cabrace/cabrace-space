@@ -48,7 +48,10 @@
           -->
         </div>
       </div>
-      {#each posts as post}
+      <!-- {#each $filterCombinedPosts_store as post} -->
+        <!-- <BlogPosts {post} /> -->
+      <!-- {/each} -->
+      {#each $filterCombinedPosts_store as post}
         <BlogPosts {post} />
       {/each}
 <!-- <Posts posts={data.posts.posts}> -->
